@@ -1,4 +1,4 @@
-FROM node:16-alpine
+FROM node:alpine
 
 RUN apk --no-cache add \
     python3 \
@@ -17,16 +17,11 @@ RUN npm ci --omit=dev
 
 COPY . /usr/src/app
 
-RUN mkdir /usr/src/app/key
-
-COPY ./Keypair6Delta.ppk /usr/src/app/key
-
 RUN chown -R node:node .
-RUN chmod +x ./start.sh
 
-#ENV URI_RABBITMQ='amqp://guest:guest@rabbitmq-service.oih-dev-ns.svc.cluster.local'
-ENV URI_RABBITMQ='amqp://guest:guest@rabbitmq-service.oih.svc.cluster.local'
+ENV URI_RABBITMQ='amqp://guest:guest@rabbitmq-service.oih-dev-ns.svc.cluster.local'
+#ENV URI_RABBITMQ='amqp://guest:guest@rabbitmq-service.oih.svc.cluster.local'
 
 USER node
 
-ENTRYPOINT ["./start.sh"]
+ENTRYPOINT ["node", "./node_modules/@openintegrationhub/ferryman/runGlobal.js"]

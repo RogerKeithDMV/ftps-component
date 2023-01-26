@@ -1,20 +1,86 @@
 {
-  "title": "FTP Server Connection",
-  "description": "Component that execute several options inside an ftp.",
-  "docsUrl": "",
+  "title": "FTPS Server Connection",
+  "description": "Component that execute several options inside an ftps.",
+  "docsUrl": "https://github.com/CloudGenUser/ftps-component/blob/main/README.md",
   "buildType": "docker",
-  "credentials": {
+  "fields": {
+    "host": {
+      "description": "The host where you will connect, can be a url or ip.",
+      "defaultValue": null,
+      "label": "host",
+      "required": true
+    },
+    "port": {
+      "description": "The port where you will access to the ftps server.",
+      "defaultValue": null,
+      "label": "port",
+      "required": true
+    },
+    "username": {
+      "description": "The username that have grants to connect with the ftps server.",
+      "defaultValue": null,
+      "label": "username",
+      "required": true
+    },
+    "password": {
+      "description": "This parameter contains the password that can establish the connection with the ftps.",
+      "defaultValue": null,
+      "label": "password",
+      "required": true
+    },
+    "secure": {
+      "description": "It is a boolean value where we specify if the connection is secure or not.",
+      "defaultValue": null,
+      "label": "secure",
+      "required": true
+    },
+    "flag": {
+      "description": "The string that contains the action to execute can be one of these: CREATEDIRECTORY, DELETEDIRECTORY, DELETEFILE, GETFILE, GETLISTFILES, RENAMEFILE, SAVEFILE. The string is not case sensitive.",
+      "defaultValue": null,
+      "label": "flag",
+      "required": true
+    },
+    "path": {
+      "description": "The path you will be working on.",
+      "defaultValue": null,
+      "label": "path",
+      "required": false
+    },
+    "file": {
+      "description": "The name of the file you want to delete.",
+      "defaultValue": null,
+      "label": "file",
+      "required": false
+    },
+    "encoding": {
+      "description": "The shrink we want to use to get the file, if this parameter is not sent it will take base64 by default.",
+      "defaultValue": null,
+      "label": "encoding",
+      "required": false
+    },
+    "newName": {
+      "description": "the new name of the file.",
+      "defaultValue": null,
+      "label": "newName",
+      "required": false
+    },
+    "oldName": {
+      "description": "tThe current name of the file..",
+      "defaultValue": null,
+      "label": "oldName",
+      "required": false
+    }
   },
   "triggers": {
-    "testTriggers": {
-      "title": "Test...",
-      "main": "./lib/triggers/processTrigger.js"
+    "ftps_source": {
+      "title": "FTPS Component",
+      "main": "./lib/actions/ftps.js"
     }
   },
   "actions": {
-    "ftp": {
-      "title": "FTP Component",
-      "main": "./lib/actions/ftp.js"
+    "ftps": {
+      "title": "FTPS Component",
+      "main": "./lib/actions/ftps.js"
     }
   }
 }

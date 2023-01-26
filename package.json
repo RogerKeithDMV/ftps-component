@@ -31,9 +31,9 @@
     "express": "^4.18.1",
     "ftps-cg-lib": "1.0.3",
     "errorhandler-nxg-cg": "^1.1.0",
-	"loging-elastic-cg-lib": "^0.1.13",
+    "loging-elastic-cg-lib": "^1.0.0",
     "nodemon": "^2.0.19",
-    "utils-nxg-cg": "^1.1.15",
+    "utils-nxg-cg": "^1.1.16",
     "md5-node-cg-lib": "^0.0.10"
   },
   "devDependencies": {
