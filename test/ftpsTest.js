@@ -19,13 +19,6 @@ app.post('/', async(req, res)=>{
   properties.oldName=req.body.oldName;
   properties.newName=req.body.newName;
 
-  /*properties.flag=req.body.path;
-
-  properties.newName=req.body.newName;
-  properties.localPath=req.body.localPath;
-  properties.clientKey=req.body.clientKey;
-  properties.clientCert=req.body.clientCert;
-  properties.serverCert=req.body.serverCert;*/
 
   try{
     log.info("Conectando");
