@@ -22,14 +22,15 @@ app.post('/', async(req, res)=>{
 
   try{
     log.info("Conectando");
-    const result = await ftps({data:properties},{});
-    log.info("resultado", result);
-    /*const { result, flag } = await ftps(msg, cfg);
+    //const result = await ftps({data:properties},{});
+    //log.info("resultado", result);
+    const { result, flag } = await ftps({data:properties},{});
+    console.log("Esto es result:"+result);
             const data = {
                 content: result
             }
-            const md5sum = createSum(result, flag);*/
-    res.json(result);
+            ///const md5sum = createSum(result, flag);
+    res.json({data});
   }
 
   catch(err){

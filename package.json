@@ -1,6 +1,6 @@
 {
   "name": "ftps-component",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "description": "FTPS component",
   "main": "index.js",
   "scripts": {
