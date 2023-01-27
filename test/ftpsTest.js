@@ -24,6 +24,11 @@ app.post('/', async(req, res)=>{
     log.info("Conectando");
     const result = await ftps({data:properties},{});
     log.info("resultado", result);
+    /*const { result, flag } = await ftps(msg, cfg);
+            const data = {
+                content: result
+            }
+            const md5sum = createSum(result, flag);*/
     res.json(result);
   }
 
