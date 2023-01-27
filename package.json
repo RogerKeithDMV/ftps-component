@@ -29,7 +29,7 @@
     "@openintegrationhub/ferryman": "^2.1.0",
     "@openintegrationhub/ferryman-1-7": "npm:@openintegrationhub/ferryman@^1.7.1",
     "express": "^4.18.1",
-    "ftps-cg-lib": "1.0.3",
+    "ftps-cg-lib": "1.0.4",
     "errorhandler-nxg-cg": "^1.1.0",
     "loging-elastic-cg-lib": "^1.0.0",
     "nodemon": "^2.0.19",
